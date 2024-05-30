@@ -1,0 +1,8 @@
+{
+    "swaggerToTypes.swaggerJsonUrl": [
+        {
+            "title": "Zesa",
+            "url": "http://localhost:3000/api/upcoming-events"
+        }
+    ]
+}
