@@ -10,8 +10,7 @@ const loadsheddingStatusRoutes = require('./routes/loadsheddingStatusRouter');
 const areaStatusRoutes = require('./routes/areaStatusRoutes');
 const userRoutes = require('./routes/userRoutes');
 const faultRoutes = require('./routes/faultRoutes');
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+const { swaggerUi, specs } = require('./swagger');
 const cors = require('cors');
 
 dotenv.config();
@@ -58,7 +57,7 @@ app.post('/login', (req, res) => {
 });
 
 app.use('/api', zetdcRoutes, suburbRoutes, areasNearbyRoutes, loadsheddingStatusRoutes, faultRoutes, userRoutes);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
