@@ -1,0 +1,42 @@
+.app {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .navbar {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .sidebar {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    width: 250px;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  a {
+    display: block;
+    margin-bottom: 1rem;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .home {
+    text-align: center;
+  }
+  
+  .endpoint-page {
+    text-align: center;
+  }
+  
