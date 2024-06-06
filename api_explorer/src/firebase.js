@@ -1,18 +1,18 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+const { initializeApp } = require('firebase/app');
+const { getFirestore } = require('firebase/firestore');
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAYXCyWEi12xsCzDp3ihsBpmfJCnocJehI",
+  authDomain: "shedsense-api-explorer.firebaseapp.com",
+  projectId: "shedsense-api-explorer",
+  storageBucket: "shedsense-api-explorer.appspot.com",
+  messagingSenderId: "684625648068",
+  appId: "1:684625648068:web:14f435eb97ecf68495ac91",
+  measurementId: "G-JF88JGLB2S"
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const db = firebase.firestore();
-
-export { db };
+const db = getFirestore(app);
+module.export={ db };
