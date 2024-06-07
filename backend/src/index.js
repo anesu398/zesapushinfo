@@ -55,7 +55,9 @@ app.post('/login', (req, res) => {
 
   res.json({ token });
 });
+const waterRoutes = require('./routes/WaterRoute');
 
+app.use('/api/water', waterRoutes);
 app.use('/api', zetdcRoutes, suburbRoutes, areasNearbyRoutes, loadsheddingStatusRoutes, faultRoutes, userRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
