@@ -1,13 +1,19 @@
 const mongoose = require('mongoose');
 
 const gasDistributionSchema = new mongoose.Schema({
-  region: String,
-  status: String,
-  disruptionStartTime: Date,
-  disruptionEndTime: Date,
-  impactedAreas: [String],
+  region: {
+    type: String,
+    required: true
+  },
+  status: {
+    type: String,
+    enum: ['Normal', 'Low Pressure', 'No Supply'],
+    required: true
+  },
+  lastChecked: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-const GasDistribution = mongoose.model('GasDistribution', gasDistributionSchema);
-
-module.exports = GasDistribution;
+module.exports = mongoose.model('GasDistribution', gasDistributionSchema);
