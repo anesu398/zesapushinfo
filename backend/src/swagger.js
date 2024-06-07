@@ -7,9 +7,19 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'ZETDC LOADSHEDDING API',
+      title: 'Service Directory API',
       version: '1.0.0.2024EC',
-      description: 'The ZETDC API provides access to load shedding status, events, and area information in Zimbabwe. Authentication required.',
+      description: 'The Service Directory API provides access to various services and businesses. Authentication required. \
+                    For more information, visit the [official documentation](http://yourdocumentationlink.com).',
+      contact: {
+        name: 'Anesu Ndava',
+        email: 'ndabaprinco@gmail.com',
+        url: 'https://rodent-zimbabwe.github.io/contact',
+      },
+      license: {
+        name: 'MIT License',
+        url: 'https://opensource.org/licenses/MIT',
+      },
     },
     servers: [
       {
@@ -19,6 +29,8 @@ const options = {
   },
   apis: ['./src/routes/*.js', './src/controllers/*.js'], // paths to files with API definitions
 };
+
+
 
 const specs = swaggerJsDoc(options);
 
