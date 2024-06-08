@@ -1,0 +1,12 @@
+.home {
+    @apply p-6 bg-white shadow-lg rounded-lg;
+  }
+  
+  .title {
+    @apply text-4xl font-bold;
+  }
+  
+  .description {
+    @apply text-lg mt-4;
+  }
+  
