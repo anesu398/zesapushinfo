@@ -1,0 +1,26 @@
+.form {
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  

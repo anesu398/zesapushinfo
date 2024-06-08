@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@tensorflow/tfjs": "^4.20.0",
+    "axios": "^1.7.2",
     "gsap": "^3.12.5",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "styled-components": "^6.1.11",
     "three": "^0.165.0",
     "web3": "^4.9.0"
   },
