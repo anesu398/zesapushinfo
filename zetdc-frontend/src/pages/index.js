@@ -1,22 +1,40 @@
-import Head from 'next/head';
-import LoadsheddingStatus from '../components/LoadsheddingStatus';
-import AreaSearch from '../components/AreaSearch';
-import UpcomingEvents from '../components/UpcomingEvents';
+// src/pages/index.js
+import ThreeDMap from '../components/ThreeDMap';
+import ARViewer from '../components/ARViewer';
+import PersonalizationEngine from '../components/PersonalizationEngine';
+import VoiceControl from '../components/VoiceControl';
+import HolographicDisplay from '../components/HolographicDisplay';
+import IoTIntegration from '../components/IoTIntegration';
+import BlockchainIntegration from '../components/BlockchainIntegration';
+import HyperRealisticVisuals from '../components/HyperRealisticVisuals';
+import Sustainability from '../components/Sustainability';
+import Security from '../components/Security';
+import AIGeneratedContent from '../components/AIGeneratedContent';
+import Accessibility from '../components/Accessibility';
+import ResponsiveDesign from '../components/ResponsiveDesign';
 
-export default function Home() {
+const user = {
+  preferences: [/* User preference data */]
+};
+
+const Home = () => {
   return (
     <div>
-      <Head>
-        <title>ZETDC Loadshedding Information</title>
-        <meta name="description" content="ZETDC Loadshedding Information and Updates" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className="container mx-auto p-4">
-        <h1 className="text-4xl font-bold text-center my-8">ZETDC Loadshedding Information</h1>
-        <LoadsheddingStatus />
-        <AreaSearch />
-        <UpcomingEvents />
-      </main>
+      <ThreeDMap />
+      <ARViewer />
+      <PersonalizationEngine user={user} />
+      <VoiceControl />
+      <HolographicDisplay />
+      <IoTIntegration />
+      <BlockchainIntegration />
+      <HyperRealisticVisuals />
+      <Sustainability />
+      <Security />
+      <AIGeneratedContent />
+      <Accessibility />
+      <ResponsiveDesign />
     </div>
   );
-}
+};
+
+export default Home;

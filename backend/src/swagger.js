@@ -14,7 +14,7 @@ const options = {
       contact: {
         name: 'Anesu Ndava',
         email: 'ndabaprinco@gmail.com',
-        url: 'https://rodent-zimbabwe.github.io/contact',
+        url: 'https://rodent-zimbabwe.github.io/app',
       },
       license: {
         name: 'MIT License',

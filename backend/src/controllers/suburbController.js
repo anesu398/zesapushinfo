@@ -1,7 +1,7 @@
-// controllers/suburbController.js
+
 const Suburb = require('../models/Suburb');
 
-// Get all suburbs
+
 exports.getAllSuburbs = async (req, res) => {
     try {
         const suburbs = await Suburb.find();
@@ -11,7 +11,7 @@ exports.getAllSuburbs = async (req, res) => {
     }
 };
 
-// Get a single suburb by code
+
 exports.getSuburbByCode = async (req, res) => {
     try {
         const suburb = await Suburb.findOne({ code: req.params.code });
@@ -25,7 +25,7 @@ exports.getSuburbByCode = async (req, res) => {
     }
 };
 
-// Create a new suburb
+
 exports.createSuburb = async (req, res) => {
     const { suburb, code, latitude, longitude } = req.body;
     const newSuburb = new Suburb({
@@ -49,7 +49,7 @@ exports.createSuburb = async (req, res) => {
     }
 };
 
-// Update an existing suburb
+
 exports.updateSuburb = async (req, res) => {
     const { suburb, latitude, longitude } = req.body;
     try {
@@ -74,7 +74,7 @@ exports.updateSuburb = async (req, res) => {
     }
 };
 
-// Delete a suburb
+
 exports.deleteSuburb = async (req, res) => {
     try {
         const deletedSuburb = await Suburb.findOneAndDelete({ code: req.params.code });
