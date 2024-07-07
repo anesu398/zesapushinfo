@@ -1,21 +1,30 @@
-// models/Suburb.js
 const mongoose = require('mongoose');
 
-const SuburbSchema = new mongoose.Schema({
-    suburb: {
-        type: String,
-        required: true,
-        unique: true
+const suburbSchema = new mongoose.Schema({
+  code: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  suburb: {
+    type: String,
+    required: true,
+  },
+  location: {
+    type: {
+      type: String, 
+      enum: ['Point'], 
+      required: true,
     },
-    code: {
-        type: String,
-        required: true,
-        unique: true
+    coordinates: {
+      type: [Number],
+      required: true,
     },
-    location: {
-        type: { type: String, default: 'Point' },
-        coordinates: { type: [Number], index: '2dsphere' }
-    }
+  },
 });
 
-module.exports = mongoose.model('Suburb', SuburbSchema);
+suburbSchema.index({ location: '2dsphere' });
+
+const Suburb = mongoose.model('Suburb', suburbSchema);
+
+module.exports = Suburb;

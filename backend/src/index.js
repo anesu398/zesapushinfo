@@ -12,6 +12,7 @@ const userRoutes = require('./routes/userRoutes');
 const faultRoutes = require('./routes/faultRoutes');
 const { swaggerUi, specs } = require('./swagger');
 const cors = require('cors');
+const path = require('path');
 
 dotenv.config();
 
@@ -60,9 +61,10 @@ const waterRoutes = require('./routes/WaterRoute');
 app.use('/api/water', waterRoutes);
 app.use('/api', zetdcRoutes, suburbRoutes, areasNearbyRoutes, loadsheddingStatusRoutes, faultRoutes, userRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.use((err, req, res, next) => {
