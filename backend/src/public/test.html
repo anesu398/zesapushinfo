@@ -9,9 +9,17 @@
 <body>
     <div class="container">
         <header>
-            <h1>ZesaPush Api Test</h1>
+            <h1>ZesaPush</h1>
         </header>
         <main>
+            <aside class="sidebar">
+                <h2>Environments</h2>
+                <div id="environment-list"></div>
+                <button onclick="addEnvironment()">Add Environment</button>
+                <h2>Collections</h2>
+                <div id="collection-list"></div>
+                <button onclick="addCollection()">Add Collection</button>
+            </aside>
             <section class="request-builder">
                 <div class="request-tabs">
                     <div class="tab active" onclick="openTab(event, 'request-1')">Request 1</div>
