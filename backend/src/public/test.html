@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZesaPush</title>
+    <link rel="stylesheet" href="./test.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ZesaPush Api Test</h1>
+        </header>
+        <main>
+            <section class="request-builder">
+                <div class="request-tabs">
+                    <div class="tab active" onclick="openTab(event, 'request-1')">Request 1</div>
+                    <div class="add-tab" onclick="addTab()">+</div>
+                </div>
+                <div class="request-content">
+                    <div id="request-1" class="tab-content active">
+                        <div class="request-header">
+                            <select id="method-1">
+                                <option value="GET">GET</option>
+                                <option value="POST">POST</option>
+                                <option value="PUT">PUT</option>
+                                <option value="DELETE">DELETE</option>
+                            </select>
+                            <input type="text" id="url-1" placeholder="Enter request URL here">
+                            <button onclick="sendRequest('request-1')">Send</button>
+                        </div>
+                        <div class="request-params">
+                            <h3>Headers</h3>
+                            <div id="headers-1" class="params"></div>
+                            <button onclick="addHeader('headers-1')">Add Header</button>
+                        </div>
+                        <div class="request-body">
+                            <h3>Body</h3>
+                            <textarea id="body-1" placeholder="Enter request body here"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="response-viewer">
+                <h2>Response</h2>
+                <pre id="response-content"></pre>
+            </section>
+        </main>
+    </div>
+    <script src="./test.js"></script>
+</body>
+</html>
