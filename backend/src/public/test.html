@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZesaPush</title>
+    <title>Advanced API Tester</title>
     <link rel="stylesheet" href="./test.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>ZesaPush</h1>
+            <h1>Advanced API Tester</h1>
+            <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
         </header>
         <main>
             <aside class="sidebar">
@@ -19,6 +20,8 @@
                 <h2>Collections</h2>
                 <div id="collection-list"></div>
                 <button onclick="addCollection()">Add Collection</button>
+                <h2>History</h2>
+                <div id="history-list"></div>
             </aside>
             <section class="request-builder">
                 <div class="request-tabs">
@@ -37,6 +40,16 @@
                             <input type="text" id="url-1" placeholder="Enter request URL here">
                             <button onclick="sendRequest('request-1')">Send</button>
                         </div>
+                        <div class="auth-section">
+                            <h3>Authentication</h3>
+                            <select id="auth-type-1">
+                                <option value="None">None</option>
+                                <option value="Basic">Basic Auth</option>
+                                <option value="Bearer">Bearer Token</option>
+                                <option value="OAuth2">OAuth2</option>
+                            </select>
+                            <div id="auth-credentials-1"></div>
+                        </div>
                         <div class="request-params">
                             <h3>Headers</h3>
                             <div id="headers-1" class="params"></div>
@@ -51,10 +64,22 @@
             </section>
             <section class="response-viewer">
                 <h2>Response</h2>
-                <pre id="response-content"></pre>
+                <div class="response-tabs">
+                    <div class="response-tab active" onclick="openResponseTab(event, 'raw')">Raw</div>
+                    <div class="response-tab" onclick="openResponseTab(event, 'preview')">Preview</div>
+                    <div class="response-tab" onclick="openResponseTab(event, 'headers')">Headers</div>
+                    <div class="response-tab" onclick="openResponseTab(event, 'cookies')">Cookies</div>
+                </div>
+                <div id="response-raw" class="response-content active"><pre id="response-content"></pre></div>
+                <div id="response-preview" class="response-content"><pre id="response-preview-content"></pre></div>
+                <div id="response-headers" class="response-content"><pre id="response-headers-content"></pre></div>
+                <div id="response-cookies" class="response-content"><pre id="response-cookies-content"></pre></div>
             </section>
         </main>
     </div>
     <script src="./test.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

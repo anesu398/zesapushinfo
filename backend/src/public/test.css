@@ -1,9 +1,30 @@
+/* Add dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .container {
+    background-color: #444;
+}
+
+body.dark-mode .tab, body.dark-mode .add-tab, body.dark-mode .request-header button {
+    background-color: #666;
+}
+
+body.dark-mode .request-content, body.dark-mode .response-viewer {
+    background-color: #555;
+}
+
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
+
+/* Rest of the styles remain the same */
 
 .container {
     max-width: 1200px;
@@ -102,6 +123,18 @@ main {
     background-color: #0056b3;
 }
 
+.auth-section {
+    margin-bottom: 20px;
+}
+
+.auth-section select, .auth-section input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
 .request-params {
     margin-bottom: 20px;
 }
@@ -129,32 +162,40 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-}
-
-button {
-    padding: 10px;
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #f0f0f0;
+    height: 100px;
+    resize: vertical;
 }
 
 .response-viewer {
+    margin-top: 20px;
+}
+
+.response-tabs {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.response-tab {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 4px 4px 0 0;
+}
+
+.response-tab.active {
+    background-color: #0056b3;
+}
+
+.response-content {
+    display: none;
     background-color: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-pre {
-    background-color: #f8f8f8;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    overflow: auto;
+.response-content.active {
+    display: block;
 }
