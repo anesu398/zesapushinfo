@@ -13,6 +13,13 @@ const faultRoutes = require('./routes/faultRoutes');
 const { swaggerUi, specs } = require('./swagger');
 const cors = require('cors');
 const path = require('path');
+const session = require('express-session');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+
+
 
 dotenv.config();
 
@@ -21,6 +28,7 @@ const app = express();
 
 
 connectDB();
+mongoose.connect('mongodb+srv://ndabaprinco:0787008238@zesapush.bax9exp.mongodb.net/Zesa', { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 app.use(bodyParser.json());
@@ -67,14 +75,16 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
 
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 module.exports = { app };
