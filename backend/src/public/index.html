@@ -787,11 +787,116 @@ c-11 -7 -11 -9 3 -9 25 0 32 -18 14 -36 -13 -13 -16 -13 -16 -1 0 8 -7 20 -15
                     </ul>
                     <p class="mb-8 font-light lg:text-xl">Deliver great service experiences fast - without the complexity of traditional means.</p>
                 </div>
-                <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/feature-1.png" alt="dashboard feature image">
+                <div class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex terminal-effect">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="close"></span>
+                            <span class="minimize"></span>
+                            <span class="maximize"></span>
+                        </div>
+                        <div class="terminal-title"></div>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="command">git clone https://github.com/rodent-zimbabwe/zesapushinfo.git</p>
+                        <p class="output">Cloning into 'zesapushinfo'...</p>
+                        <p class="output">remote: Counting objects: 100% (200/200), done.</p>
+                        <p class="output">remote: Compressing objects: 100% (100/100), done.</p>
+                        <p class="output">Receiving objects: 100% (200/200), 50.00 MiB | 4.00 MiB/s, done.</p>
+                        <p class="output">Resolving deltas: 100% (50/50), done.</p>
+                        <p class="command">cd zesapushinfo</p>
+                        <p class="command">cd backend</p>
+                        <p class="command">npm install</p>
+                        <p class="output">Installing dependencies...</p>
+                        <p class="output">added 500 packages, and audited 1000 packages in 10s</p>
+                        <p class="command">npm run dev</p>
+                        <p class="output">Starting the development server...</p>
+                        <p class="output">Local: http://localhost:3000</p>
+                        <p class="output">Network: http://192.168.1.10:3000</p>
+                    </div>
+                </div>
             </div>
+            
+            <style>
+            .terminal-effect {
+                background-color: #1e1e1e;
+                border-radius: 8px;
+                color: #d4d4d4;
+                font-family: 'Courier New', Courier, monospace;
+                overflow: hidden;
+                width: 100%;
+            }
+            
+            .terminal-header {
+                align-items: center;
+                background-color: #2d2d2d;
+                display: flex;
+                justify-content: space-between;
+                padding: 8px;
+            }
+            
+            .terminal-buttons {
+                display: flex;
+                gap: 8px;
+            }
+            
+            .terminal-buttons span {
+                background-color: #ff5f56;
+                border-radius: 50%;
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+            }
+            
+            .terminal-buttons span:nth-child(2) {
+                background-color: #ffbd2e;
+            }
+            
+            .terminal-buttons span:nth-child(3) {
+                background-color: #27c93f;
+            }
+            
+            .terminal-title {
+                color: #d4d4d4;
+                font-size: 12px;
+            }
+            
+            .terminal-body {
+                padding: 16px;
+            }
+            
+            .command {
+                color: #6a9955;
+            }
+            
+            .output {
+                color: #d4d4d4;
+            }
+            </style>
+            
             <!-- Row -->
             <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-                <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/feature-1.jpg" alt="feature image 2">
+                <div class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex terminal-effect">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="close"></span>
+                            <span class="minimize"></span>
+                            <span class="maximize"></span>
+                        </div>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="command">curl -X GET "https://zesapushinfo/loadshedding" -H "accept: application/json"</p>
+                        <pre class="output">{
+                "areas": [
+                    {
+                        "count": -1,
+                        "id": "zetdc-10-kmcitybyo",
+                        "name": "Khumalo Feeder",
+                        "region": "Bulawayo"
+                    }
+                ]
+            }</pre>
+                    </div>
+                </div>
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
                     <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">We invest in the world’s potential</h2>
                     <p class="mb-8 font-light lg:text-xl">Deliver reliable loadshedding information quickly and efficiently with our ZesaPushLoadshedding API. Streamline your integration process, reduce manual work, and stay informed about critical updates effortlessly.</p>
@@ -799,34 +904,104 @@ c-11 -7 -11 -9 3 -9 25 0 32 -18 14 -36 -13 -13 -16 -13 -16 -1 0 8 -7 20 -15
                     <ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
                             <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">Interactive Data Reports and Dashboards</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
                             <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">User-Friendly Templates</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
                             <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">Optimized Development Workflow</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
                             <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">Endless Business Automation</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
                             <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">Comprehensive Knowledge Management</span>
                         </li>
                     </ul>
                     <p class="font-light lg:text-xl">Maintain a well-organized repository of loadshedding data and documentation for easy access and informed decision-making.</p>
                 </div>
             </div>
-        </div>
+            
+            <style>
+            .terminal-effect {
+                background-color: #1e1e1e;
+                border-radius: 8px;
+                color: #d4d4d4;
+                font-family: 'Courier New', Courier, monospace;
+                overflow: hidden;
+                width: 100%;
+            }
+            
+            .terminal-header {
+                align-items: center;
+                background-color: #2d2d2d;
+                display: flex;
+                justify-content: space-between;
+                padding: 8px;
+            }
+            
+            .terminal-buttons {
+                display: flex;
+                gap: 8px;
+            }
+            
+            .terminal-buttons span {
+                background-color: #ff5f56;
+                border-radius: 50%;
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+            }
+            
+            .terminal-buttons span:nth-child(2) {
+                background-color: #ffbd2e;
+            }
+            
+            .terminal-buttons span:nth-child(3) {
+                background-color: #27c93f;
+            }
+            
+            .terminal-title {
+                color: #d4d4d4;
+                font-size: 12px;
+            }
+            
+            .terminal-body {
+                padding: 16px;
+                overflow: auto;
+            }
+            
+            .command {
+                color: #6a9955;
+            }
+            
+            .output {
+                color: #d4d4d4;
+                white-space: pre-wrap;
+            }
+            </style>
+            
+            </div>
       </section>
     <!-- End block -->
     <!-- Start block -->
